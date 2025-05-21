@@ -1,0 +1,25 @@
+# Виртуальное окружение
+venv/
+
+# Кеш Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Логи
+*.log
+
+# Базы данных (если будут временные)
+*.sqlite3
+*.db
+
+# Конфиденциальные переменные
+.env
+
+# VS Code
+.vscode/
+
+# pyinstaller
+dist/
+build/
