@@ -23,3 +23,5 @@ __pycache__/
 # pyinstaller
 dist/
 build/
+
+111.txt

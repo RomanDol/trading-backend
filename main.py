@@ -31,3 +31,5 @@ def get_trades():
     if file_path.exists():
         return json.loads(file_path.read_text(encoding="utf-8"))
     return {"data": []}
+
+# укпвукп
