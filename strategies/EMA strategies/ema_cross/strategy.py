@@ -9,14 +9,12 @@ symbol = "BTCUSDT"
 timeframe = "1m"
 
 # Загружаем нужный пресет из inputs.json
-params_path = Path(__file__).parent / "inputs.json"
+params_path = Path(__file__).parent / "presets.json"
 all_presets = json.loads(params_path.read_text(encoding="utf-8"))
 
-# Название пресета можно сделать параметром
-preset_name = "default"
+preset_name = "__temporary"  # ← теперь будет брать актуальные данные!
+preset = all_presets.get(preset_name)
 
-# Ищем нужный пресет
-preset = next((p for p in all_presets if p.get("preset") == preset_name), None)
 if not preset:
     raise ValueError(f"Preset '{preset_name}' not found in inputs.json")
 

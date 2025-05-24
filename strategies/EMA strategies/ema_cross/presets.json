@@ -16,12 +16,12 @@
       "step": 1
     },
     "ema_fast": {
-      "value": 9,
+      "value": 21,
       "description": "Fast EMA",
       "step": 1
     },
     "ema_slow": {
-      "value": 21,
+      "value": 20,
       "description": "Slow EMA",
       "step": 10
     }
@@ -97,39 +97,12 @@
       "step": 1
     },
     "ema_fast": {
-      "value": 9,
+      "value": 21,
       "description": "Fast EMA",
       "step": 1
     },
     "ema_slow": {
-      "value": 21,
-      "description": "Slow EMA",
-      "step": 10
-    }
-  },
-  "test-111": {
-    "file_name": {
-      "value": "EMA_Cross",
-      "description": "Str. name",
-      "step": 1
-    },
-    "symbol": {
-      "value": "BTCUSDT",
-      "description": "Symbol",
-      "step": 1
-    },
-    "timeframe": {
-      "value": "1m",
-      "description": "Timeframe",
-      "step": 1
-    },
-    "ema_fast": {
-      "value": 9,
-      "description": "Fast EMA",
-      "step": 1
-    },
-    "ema_slow": {
-      "value": 21,
+      "value": 20,
       "description": "Slow EMA",
       "step": 10
     }
