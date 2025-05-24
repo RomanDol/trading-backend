@@ -8,12 +8,21 @@ file_name = "EMA_Cross"
 symbol = "BTCUSDT"
 timeframe = "1m"
 
-# Загружаем параметры из inputs.json
+# Загружаем нужный пресет из inputs.json
 params_path = Path(__file__).parent / "inputs.json"
-params = json.loads(params_path.read_text(encoding="utf-8"))
+all_presets = json.loads(params_path.read_text(encoding="utf-8"))
 
-# Преобразуем в словарь {name: value}
-param_map = {p["name"]: p.get("value", p["default"]) for p in params}
+# Название пресета можно сделать параметром
+preset_name = "default"
+
+# Ищем нужный пресет
+preset = next((p for p in all_presets if p.get("preset") == preset_name), None)
+if not preset:
+    raise ValueError(f"Preset '{preset_name}' not found in inputs.json")
+
+# Извлекаем .value из каждого поля
+param_map = {k: v["value"] for k, v in preset.items() if k != "preset"}
+
 
 # Используем параметры
 ema_fast = int(param_map["ema_fast"])

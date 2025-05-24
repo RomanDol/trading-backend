@@ -5,6 +5,8 @@ from pathlib import Path
 from fastapi import Request
 import subprocess
 from fastapi import Query
+from presets import router as presets_router
+
 
 app = FastAPI()
 
@@ -118,3 +120,5 @@ def load_strategy_meta(path: str = Query(...)):
                 result[var] = None
 
     return result
+
+app.include_router(presets_router)
