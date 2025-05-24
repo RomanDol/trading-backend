@@ -77,9 +77,8 @@ async def run_strategy(request: Request):
     if not path.exists():
         return {"error": "strategy not found"}
 
-    params = json.dumps(body)
     result = subprocess.run(
-        ["python", str(path), params],
+        ["python", str(path)],
         capture_output=True,
         text=True
     )
@@ -96,10 +95,21 @@ async def run_strategy(request: Request):
 @app.get("/load-inputs")
 def load_inputs(path: str = Query(..., description="Relative path to strategy folder")):
     folder = Path("strategies") / path
-    file = folder / "inputs.json"
+    file = folder / "presets.json"
     if not file.exists():
         return []
-    return json.loads(file.read_text(encoding="utf-8"))
+    
+    raw = json.loads(file.read_text(encoding="utf-8"))
+
+    # Преобразуем словарь в список и добавляем ключ preset
+    result = []
+    for name, content in raw.items():
+        preset = dict(content)
+        preset["preset"] = name
+        result.append(preset)
+
+    return result
+
 
 @app.get("/load-strategy-meta")
 def load_strategy_meta(path: str = Query(...)):

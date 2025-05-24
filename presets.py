@@ -59,7 +59,15 @@ def save_preset(req: SavePresetRequest):
     if presets_path.exists():
         with open(presets_path, "r") as f:
             data = json.load(f)
+
+    # Сбросить флаг активности у всех
+    for preset in data.values():
+        preset["isActive"] = False
+
+    # Установить флаг активности текущему
+    req.inputs["isActive"] = True
     data[req.presetName] = req.inputs
+
     with open(presets_path, "w") as f:
         json.dump(data, f, indent=2)
     return {"success": True}

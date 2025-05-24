@@ -1,5 +1,6 @@
 {
   "default": {
+    "isActive": false,
     "file_name": {
       "value": "EMA_Cross",
       "description": "Str. name",
@@ -27,6 +28,7 @@
     }
   },
   "test_fast": {
+    "isActive": false,
     "file_name": {
       "value": "EMA_Cross",
       "description": "Str. name",
@@ -54,6 +56,7 @@
     }
   },
   "test_slow": {
+    "isActive": false,
     "file_name": {
       "value": "EMA_Cross",
       "description": "Str. name",
@@ -81,28 +84,29 @@
     }
   },
   "__temporary": {
+    "isActive": true,
     "file_name": {
       "value": "EMA_Cross",
       "description": "Str. name",
       "step": 1
     },
     "symbol": {
-      "value": "BTCUSDT",
+      "value": "ETHUSDT",
       "description": "Symbol",
       "step": 1
     },
     "timeframe": {
-      "value": "1m",
+      "value": "5m",
       "description": "Timeframe",
       "step": 1
     },
     "ema_fast": {
-      "value": 21,
+      "value": 5,
       "description": "Fast EMA",
       "step": 1
     },
     "ema_slow": {
-      "value": 20,
+      "value": 13,
       "description": "Slow EMA",
       "step": 10
     }
