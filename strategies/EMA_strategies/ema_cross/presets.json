@@ -83,8 +83,8 @@
       "step": 10
     }
   },
-  "__temporary": {
-    "isActive": true,
+  "__0__test_fast": {
+    "isActive": false,
     "file_name": {
       "value": "EMA_Cross",
       "description": "Str. name",
@@ -107,6 +107,62 @@
     },
     "ema_slow": {
       "value": 13,
+      "description": "Slow EMA",
+      "step": 10
+    }
+  },
+  "__0__test_slow": {
+    "isActive": false,
+    "file_name": {
+      "value": "EMA_Cross",
+      "description": "Str. name",
+      "step": 1
+    },
+    "symbol": {
+      "value": "AVAAIUSDT",
+      "description": "Symbol",
+      "step": 1
+    },
+    "timeframe": {
+      "value": "30m",
+      "description": "Timeframe",
+      "step": 1
+    },
+    "ema_fast": {
+      "value": 16,
+      "description": "Fast EMA",
+      "step": 1
+    },
+    "ema_slow": {
+      "value": 55,
+      "description": "Slow EMA",
+      "step": 10
+    }
+  },
+  "__1__test_slow": {
+    "isActive": true,
+    "file_name": {
+      "value": "EMA_Cross",
+      "description": "Str. name",
+      "step": 1
+    },
+    "symbol": {
+      "value": "AVAAIUSDT",
+      "description": "Symbol",
+      "step": 1
+    },
+    "timeframe": {
+      "value": "30m",
+      "description": "Timeframe",
+      "step": 1
+    },
+    "ema_fast": {
+      "value": 16,
+      "description": "Fast EMA",
+      "step": 1
+    },
+    "ema_slow": {
+      "value": 75,
       "description": "Slow EMA",
       "step": 10
     }
