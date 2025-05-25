@@ -83,34 +83,6 @@
       "step": 10
     }
   },
-  "__0__test_fast": {
-    "isActive": false,
-    "file_name": {
-      "value": "EMA_Cross",
-      "description": "Str. name",
-      "step": 1
-    },
-    "symbol": {
-      "value": "ETHUSDT",
-      "description": "Symbol",
-      "step": 1
-    },
-    "timeframe": {
-      "value": "5m",
-      "description": "Timeframe",
-      "step": 1
-    },
-    "ema_fast": {
-      "value": 5,
-      "description": "Fast EMA",
-      "step": 1
-    },
-    "ema_slow": {
-      "value": 13,
-      "description": "Slow EMA",
-      "step": 10
-    }
-  },
   "__0__test_slow": {
     "isActive": false,
     "file_name": {
@@ -129,7 +101,7 @@
       "step": 1
     },
     "ema_fast": {
-      "value": 16,
+      "value": 15,
       "description": "Fast EMA",
       "step": 1
     },
@@ -139,7 +111,35 @@
       "step": 10
     }
   },
-  "__1__test_slow": {
+  "__0__default": {
+    "isActive": false,
+    "file_name": {
+      "value": "EMA_Cross",
+      "description": "Str. name",
+      "step": 1
+    },
+    "symbol": {
+      "value": "BTCUSDT",
+      "description": "Symbol",
+      "step": 1
+    },
+    "timeframe": {
+      "value": "1m",
+      "description": "Timeframe",
+      "step": 1
+    },
+    "ema_fast": {
+      "value": 21,
+      "description": "Fast EMA",
+      "step": 1
+    },
+    "ema_slow": {
+      "value": 20,
+      "description": "Slow EMA",
+      "step": 10
+    }
+  },
+  "__2__default": {
     "isActive": true,
     "file_name": {
       "value": "EMA_Cross",
@@ -147,22 +147,22 @@
       "step": 1
     },
     "symbol": {
-      "value": "AVAAIUSDT",
+      "value": "BTCUSDT",
       "description": "Symbol",
       "step": 1
     },
     "timeframe": {
-      "value": "30m",
+      "value": "1m",
       "description": "Timeframe",
       "step": 1
     },
     "ema_fast": {
-      "value": 16,
+      "value": 22,
       "description": "Fast EMA",
       "step": 1
     },
     "ema_slow": {
-      "value": 75,
+      "value": 20,
       "description": "Slow EMA",
       "step": 10
     }
