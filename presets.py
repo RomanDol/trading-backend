@@ -92,3 +92,4 @@ def delete_preset(req: DeletePresetRequest):
                 json.dump(data, f, indent=2)
             return {"success": True}
     return {"success": False, "error": "Preset not found"}
+
