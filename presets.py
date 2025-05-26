@@ -78,6 +78,33 @@ def save_preset(req: SavePresetRequest):
         return {"success": True}
 
 # === Удаление пресета
+
+# @router.post("/api/presets/delete")
+# def delete_preset(req: DeletePresetRequest):
+#     presets_path = get_presets_path(req.strategyPath)
+#     if not presets_path.exists():
+#         return {"success": False, "error": "Presets file not found"}
+
+#     import re
+#     base_name = re.sub(r"^__\d+__", "", req.presetName)
+
+#     with save_lock:
+#         with open(presets_path, "r", encoding="utf-8") as f:
+#             data = json.load(f)
+
+#         # Удаляем все пресеты, которые:
+#         # - точно равны base_name (основной)
+#         # - заканчиваются на "__base_name" (временные версии)
+#         to_delete = [k for k in data if k == base_name or k.endswith(f"__{base_name}")]
+
+#         for key in to_delete:
+#             del data[key]
+
+#         with open(presets_path, "w", encoding="utf-8") as f:
+#             json.dump(data, f, indent=2)
+
+#         return {"success": True, "deleted": to_delete}
+
 @router.post("/api/presets/delete")
 def delete_preset(req: DeletePresetRequest):
     presets_path = get_presets_path(req.strategyPath)
@@ -91,10 +118,11 @@ def delete_preset(req: DeletePresetRequest):
         with open(presets_path, "r", encoding="utf-8") as f:
             data = json.load(f)
 
-        # Удаляем все пресеты, которые:
-        # - точно равны base_name (основной)
-        # - заканчиваются на "__base_name" (временные версии)
-        to_delete = [k for k in data if k == base_name or k.endswith(f"__{base_name}")]
+        # 🛠 Новый фильтр: удаляем только временные версии, если req.presetName начинается с "__"
+        if req.presetName.startswith("__"):
+            to_delete = [k for k in data if re.fullmatch(rf"__\d+__{re.escape(base_name)}", k)]
+        else:
+            to_delete = [k for k in data if k == base_name or k.endswith(f"__{base_name}")]
 
         for key in to_delete:
             del data[key]
