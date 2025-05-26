@@ -3,18 +3,15 @@
     "isActive": false,
     "file_name": {
       "value": "EMA_Cross",
-      "description": "Str. name",
-      "step": 1
+      "description": "Str. name"
     },
     "symbol": {
       "value": "BTCUSDT",
-      "description": "Symbol",
-      "step": 1
+      "description": "Symbol"
     },
     "timeframe": {
       "value": "1m",
-      "description": "Timeframe",
-      "step": 1
+      "description": "Timeframe"
     },
     "ema_fast": {
       "value": 31,
@@ -31,18 +28,15 @@
     "isActive": false,
     "file_name": {
       "value": "EMA_Cross",
-      "description": "Str. name",
-      "step": 1
+      "description": "Str. name"
     },
     "symbol": {
       "value": "ETHUSDT",
-      "description": "Symbol",
-      "step": 1
+      "description": "Symbol"
     },
     "timeframe": {
       "value": "5m",
-      "description": "Timeframe",
-      "step": 1
+      "description": "Timeframe"
     },
     "ema_fast": {
       "value": 20,
@@ -59,18 +53,15 @@
     "isActive": false,
     "file_name": {
       "value": "EMA_Cross",
-      "description": "Str. name",
-      "step": 1
+      "description": "Str. name"
     },
     "symbol": {
       "value": "AVAAIUSDT",
-      "description": "Symbol",
-      "step": 1
+      "description": "Symbol"
     },
     "timeframe": {
       "value": "30m",
-      "description": "Timeframe",
-      "step": 1
+      "description": "Timeframe"
     },
     "ema_fast": {
       "value": 20,
@@ -87,18 +78,15 @@
     "isActive": false,
     "file_name": {
       "value": "EMA_Cross",
-      "description": "Str. name",
-      "step": 1
+      "description": "Str. name"
     },
     "symbol": {
       "value": "ETHUSDT",
-      "description": "Symbol",
-      "step": 1
+      "description": "Symbol"
     },
     "timeframe": {
       "value": "5m",
-      "description": "Timeframe",
-      "step": 1
+      "description": "Timeframe"
     },
     "ema_fast": {
       "value": 22,
@@ -111,25 +99,47 @@
       "step": 10
     }
   },
-  "__0__test_fast": {
-    "isActive": true,
+  "__1__test_fast--22": {
+    "isActive": false,
     "file_name": {
       "value": "EMA_Cross",
-      "description": "Str. name",
-      "step": 1
+      "description": "Str. name"
     },
     "symbol": {
       "value": "ETHUSDT",
-      "description": "Symbol",
-      "step": 1
+      "description": "Symbol"
     },
     "timeframe": {
       "value": "5m",
-      "description": "Timeframe",
-      "step": 1
+      "description": "Timeframe"
     },
     "ema_fast": {
-      "value": 20,
+      "value": 23,
+      "description": "Fast EMA",
+      "step": 1
+    },
+    "ema_slow": {
+      "value": 53,
+      "description": "Slow EMA",
+      "step": 10
+    }
+  },
+  "__2__test_fast--22": {
+    "isActive": true,
+    "file_name": {
+      "value": "EMA_Cross",
+      "description": "Str. name"
+    },
+    "symbol": {
+      "value": "ETHUSDT",
+      "description": "Symbol"
+    },
+    "timeframe": {
+      "value": "5m",
+      "description": "Timeframe"
+    },
+    "ema_fast": {
+      "value": 24,
       "description": "Fast EMA",
       "step": 1
     },
