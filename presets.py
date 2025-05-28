@@ -26,7 +26,10 @@ class PresetsListRequest(BaseModel):
 
 # === Путь до presets.json
 def get_presets_path(strategy_path: str) -> Path:
+    if "/" in strategy_path or "\\" in strategy_path:
+        return Path("presets") / strategy_path
     return Path("strategies") / strategy_path / "presets.json"
+
 
 # === Загрузка всех названий пресетов
 @router.post("/api/presets/list")
@@ -37,6 +40,8 @@ def list_presets(req: PresetsListRequest):
     with open(presets_path, "r", encoding="utf-8") as f:
         data = json.load(f)
         return {"presets": list(data.keys())}
+
+
 
 # === Загрузка одного пресета
 @router.post("/api/presets/load")
@@ -78,33 +83,6 @@ def save_preset(req: SavePresetRequest):
         return {"success": True}
 
 # === Удаление пресета
-
-# @router.post("/api/presets/delete")
-# def delete_preset(req: DeletePresetRequest):
-#     presets_path = get_presets_path(req.strategyPath)
-#     if not presets_path.exists():
-#         return {"success": False, "error": "Presets file not found"}
-
-#     import re
-#     base_name = re.sub(r"^__\d+__", "", req.presetName)
-
-#     with save_lock:
-#         with open(presets_path, "r", encoding="utf-8") as f:
-#             data = json.load(f)
-
-#         # Удаляем все пресеты, которые:
-#         # - точно равны base_name (основной)
-#         # - заканчиваются на "__base_name" (временные версии)
-#         to_delete = [k for k in data if k == base_name or k.endswith(f"__{base_name}")]
-
-#         for key in to_delete:
-#             del data[key]
-
-#         with open(presets_path, "w", encoding="utf-8") as f:
-#             json.dump(data, f, indent=2)
-
-#         return {"success": True, "deleted": to_delete}
-
 @router.post("/api/presets/delete")
 def delete_preset(req: DeletePresetRequest):
     presets_path = get_presets_path(req.strategyPath)
@@ -131,3 +109,67 @@ def delete_preset(req: DeletePresetRequest):
             json.dump(data, f, indent=2)
 
         return {"success": True, "deleted": to_delete}
+
+
+@router.get("/api/presets/tree")
+def list_presets_tree():
+    base_path = Path("presets")
+
+    def walk(path: Path):
+        items = []
+        for p in sorted(path.iterdir()):
+            if p.name.startswith("."):
+                continue
+
+            if p.is_file() and p.suffix == ".json":
+                items.append({
+                    "name": p.stem,
+                    "type": "file",
+                    "path": str(p.relative_to(base_path)).replace("\\", "/")
+                })
+            elif p.is_dir():
+                items.append({
+                    "name": p.name,
+                    "type": "folder",
+                    "children": walk(p)
+                })
+        return items
+
+    if not base_path.exists():
+        return []
+
+    return walk(base_path)
+
+@router.get("/api/presets/load-file")
+def load_preset_file(path: str):
+    file_path = Path("presets") / path
+    if not file_path.exists():
+        return {"success": False, "error": "File not found"}
+
+    return {
+        "success": True,
+        "inputs": json.loads(file_path.read_text(encoding="utf-8"))
+    }
+
+
+class SaveFileRequest(BaseModel):
+    path: str
+    inputs: dict
+
+@router.post("/api/presets/save-file")
+def save_preset_file(req: SaveFileRequest):
+    file_path = Path("presets") / req.path
+    file_path.parent.mkdir(parents=True, exist_ok=True)
+    file_path.write_text(json.dumps(req.inputs, indent=2, ensure_ascii=False), encoding="utf-8")
+    return {"success": True}
+
+
+
+
+@router.delete("/api/presets/delete-file")
+def delete_preset_file(path: str):
+    file_path = Path("presets") / path
+    if not file_path.exists():
+        return {"success": False, "error": "File not found"}
+    file_path.unlink()
+    return {"success": True}

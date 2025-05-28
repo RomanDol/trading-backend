@@ -131,4 +131,33 @@ def load_strategy_meta(path: str = Query(...)):
 
     return result
 
+
+@app.post("/run-strategy")
+async def run_strategy(request: Request):
+    body = await request.json()
+    path = Path("strategies") / body["path"]
+    if not path.exists():
+        return {"error": "strategy not found"}
+
+    inputs = body.get("inputs", {})
+
+    result = subprocess.run(
+        ["python", str(path / "strategy.py")],
+        input=json.dumps(inputs),
+        text=True,
+        capture_output=True
+    )
+
+    if result.returncode != 0:
+        return {
+            "status": "error",
+            "stderr": result.stderr
+        }
+
+    return {"status": "ok"}
+
+
+
+
 app.include_router(presets_router)
+
