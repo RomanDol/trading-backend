@@ -9,32 +9,32 @@ save_lock = threading.Lock()
 
 # === Модели запроса
 class LoadPresetRequest(BaseModel):
-    strategyPath: str
+    presetPath: str
     presetName: str
 
 class SavePresetRequest(BaseModel):
-    strategyPath: str
+    presetPath: str
     presetName: str
     inputs: dict
 
 class DeletePresetRequest(BaseModel):
-    strategyPath: str
+    presetPath: str
     presetName: str
 
 class PresetsListRequest(BaseModel):
-    strategyPath: str
+    presetPath: str
+
 
 # === Путь до presets.json
-def get_presets_path(strategy_path: str) -> Path:
-    if "/" in strategy_path or "\\" in strategy_path:
-        return Path("presets") / strategy_path
-    return Path("strategies") / strategy_path / "presets.json"
+def get_preset_path(preset_path: str) -> Path:
+    return Path("presets") / preset_path
+
 
 
 # === Загрузка всех названий пресетов
 @router.post("/api/presets/list")
 def list_presets(req: PresetsListRequest):
-    presets_path = get_presets_path(req.strategyPath)
+    presets_path = get_preset_path(req.presetPath)
     if not presets_path.exists():
         return {"presets": []}
     with open(presets_path, "r", encoding="utf-8") as f:
@@ -46,7 +46,7 @@ def list_presets(req: PresetsListRequest):
 # === Загрузка одного пресета
 @router.post("/api/presets/load")
 def load_preset(req: LoadPresetRequest):
-    presets_path = get_presets_path(req.strategyPath)
+    presets_path = get_preset_path(req.presetPath)
     if not presets_path.exists():
         return {"success": False, "error": "Presets file not found"}
     with open(presets_path, "r", encoding="utf-8") as f:
@@ -56,7 +56,7 @@ def load_preset(req: LoadPresetRequest):
 # === Сохранение/обновление пресета
 @router.post("/api/presets/save")
 def save_preset(req: SavePresetRequest):
-    presets_path = get_presets_path(req.strategyPath)
+    presets_path = get_preset_path(req.presetPath)
 
     with save_lock:
         # создаём директорию, если нет
@@ -85,7 +85,7 @@ def save_preset(req: SavePresetRequest):
 # === Удаление пресета
 @router.post("/api/presets/delete")
 def delete_preset(req: DeletePresetRequest):
-    presets_path = get_presets_path(req.strategyPath)
+    presets_path = get_preset_path(req.presetPath)
     if not presets_path.exists():
         return {"success": False, "error": "Presets file not found"}
 
