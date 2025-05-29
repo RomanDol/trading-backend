@@ -9,8 +9,8 @@ params = json.load(sys.stdin)
 
 symbol = params.get("symbol")
 timeframe = params.get("timeframe")
-ema_fast = int(params.get("ema_fast", 8))
-ema_slow = int(params.get("ema_slow", 21))
+ema_fast = int(params.get("ema_fast", 80))
+ema_slow = int(params.get("ema_slow", 25))
 
 if not symbol or not timeframe:
     raise ValueError("Missing required 'symbol' or 'timeframe' in inputs")

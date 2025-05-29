@@ -70,17 +70,46 @@ def list_strategies():
 
 
 
+# @app.post("/run-strategy")
+# async def run_strategy(request: Request):
+   #  body = await request.json()
+   #  path = Path("strategies") / body["path"]
+   #  if not path.exists():
+   #      return {"error": "strategy not found"}
+
+   #  result = subprocess.run(
+   #      ["python", str(path)],
+   #      capture_output=True,
+   #      text=True
+   #  )
+
+   #  if result.returncode != 0:
+   #      return {
+   #          "status": "error",
+   #          "stderr": result.stderr
+   #      }
+
+   #  return {"status": "ok"}
+
+
 @app.post("/run-strategy")
 async def run_strategy(request: Request):
     body = await request.json()
     path = Path("strategies") / body["path"]
     if not path.exists():
-        return {"error": "strategy not found"}
+        return {"error": "strategy folder not found"}
+
+    inputs = body.get("inputs", {})
+
+    script = path / "strategy.py"
+    if not script.exists():
+        return {"error": "strategy.py not found"}
 
     result = subprocess.run(
-        ["python", str(path)],
-        capture_output=True,
-        text=True
+        ["python", str(script)],
+        input=json.dumps(inputs),
+        text=True,
+        capture_output=True
     )
 
     if result.returncode != 0:
@@ -90,6 +119,9 @@ async def run_strategy(request: Request):
         }
 
     return {"status": "ok"}
+
+
+
 
 
 @app.get("/load-inputs")

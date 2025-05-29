@@ -1,4 +1,29 @@
 {
+  "test_fast--2": {
+    "isActive": false,
+    "file_name": {
+      "value": "EMA_Cross",
+      "description": "Str. name"
+    },
+    "symbol": {
+      "value": "CETUSUSDT",
+      "description": "Symbol"
+    },
+    "timeframe": {
+      "value": "5m",
+      "description": "Timeframe"
+    },
+    "ema_fast": {
+      "value": 27,
+      "description": "Fast EMA",
+      "step": 1
+    },
+    "ema_slow": {
+      "value": 113,
+      "description": "Slow EMA",
+      "step": 10
+    }
+  },
   "default": {
     "isActive": false,
     "file_name": {
@@ -24,31 +49,6 @@
       "step": 10
     }
   },
-  "test_fast--2": {
-    "isActive": false,
-    "file_name": {
-      "value": "EMA_Cross",
-      "description": "Str. name"
-    },
-    "symbol": {
-      "value": "CETUSUSDT",
-      "description": "Symbol"
-    },
-    "timeframe": {
-      "value": "5m",
-      "description": "Timeframe"
-    },
-    "ema_fast": {
-      "value": 29,
-      "description": "Fast EMA",
-      "step": 1
-    },
-    "ema_slow": {
-      "value": 113,
-      "description": "Slow EMA",
-      "step": 10
-    }
-  },
   "test_fast--5": {
     "isActive": false,
     "file_name": {
@@ -64,7 +64,7 @@
       "description": "Timeframe"
     },
     "ema_fast": {
-      "value": 35,
+      "value": 27,
       "description": "Fast EMA",
       "step": 1
     },
@@ -89,12 +89,12 @@
       "description": "Timeframe"
     },
     "ema_fast": {
-      "value": 441,
+      "value": 22,
       "description": "Fast EMA",
       "step": 1
     },
     "ema_slow": {
-      "value": 170,
+      "value": 75,
       "description": "Slow EMA",
       "step": 10
     }
@@ -114,7 +114,7 @@
       "description": "Timeframe"
     },
     "ema_fast": {
-      "value": 25,
+      "value": 22,
       "description": "Fast EMA",
       "step": 1
     },
@@ -149,52 +149,27 @@
       "step": 10
     }
   },
-  "EMA-Cs--v-12_ANIMEU_6h_v-sr": {
-    "isActive": false,
-    "file_name": {
-      "value": "EMA-Cs--v-12",
-      "description": "Str. name"
-    },
-    "symbol": {
-      "value": "CETUSUSDT",
-      "description": "Symbol"
-    },
-    "timeframe": {
-      "value": "5m",
-      "description": "Timeframe"
-    },
-    "ema_fast": {
-      "value": 29,
-      "description": "Fast EMA",
-      "step": 1
-    },
-    "ema_slow": {
-      "value": 113,
-      "description": "Slow EMA",
-      "step": 10
-    }
-  },
-  "__0__test_slow--3": {
+  "__0__default": {
     "isActive": true,
     "file_name": {
       "value": "EMA_Cross",
       "description": "Str. name"
     },
     "symbol": {
-      "value": "DUSKUSDT",
+      "value": "BERAUSDT",
       "description": "Symbol"
     },
     "timeframe": {
-      "value": "30m",
+      "value": "1m",
       "description": "Timeframe"
     },
     "ema_fast": {
-      "value": 25,
+      "value": 39,
       "description": "Fast EMA",
       "step": 1
     },
     "ema_slow": {
-      "value": 75,
+      "value": 50,
       "description": "Slow EMA",
       "step": 10
     }
