@@ -6,7 +6,7 @@
       "description": "Str. name"
     },
     "symbol": {
-      "value": "BERAUSDT",
+      "value": "BTCUSDT",
       "description": "Symbol"
     },
     "timeframe": {
@@ -174,27 +174,52 @@
       "step": 10
     }
   },
-  "__0__test_slow--3": {
+  "test_fast--8": {
+    "isActive": false,
+    "file_name": {
+      "value": "EMA_Cross",
+      "description": "Str. name"
+    },
+    "symbol": {
+      "value": "BTCUSD",
+      "description": "Symbol"
+    },
+    "timeframe": {
+      "value": "1m\u043e",
+      "description": "Timeframe"
+    },
+    "ema_fast": {
+      "value": 34,
+      "description": "Fast EMA",
+      "step": 1
+    },
+    "ema_slow": {
+      "value": 125,
+      "description": "Slow EMA",
+      "step": 10
+    }
+  },
+  "__0__default": {
     "isActive": true,
     "file_name": {
       "value": "EMA_Cross",
       "description": "Str. name"
     },
     "symbol": {
-      "value": "DUSKUSDT",
+      "value": "BTCUSDT",
       "description": "Symbol"
     },
     "timeframe": {
-      "value": "30m",
+      "value": "1m",
       "description": "Timeframe"
     },
     "ema_fast": {
-      "value": 25,
+      "value": 390,
       "description": "Fast EMA",
       "step": 1
     },
     "ema_slow": {
-      "value": 75,
+      "value": 50,
       "description": "Slow EMA",
       "step": 10
     }

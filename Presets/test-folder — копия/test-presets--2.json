@@ -89,7 +89,7 @@
       "description": "Timeframe"
     },
     "ema_fast": {
-      "value": 23,
+      "value": 24,
       "description": "Fast EMA",
       "step": 1
     },
@@ -149,27 +149,27 @@
       "step": 10
     }
   },
-  "__0__test_slow--2": {
+  "__0__default": {
     "isActive": true,
     "file_name": {
       "value": "EMA_Cross",
       "description": "Str. name"
     },
     "symbol": {
-      "value": "DUSKUSDT",
+      "value": "BERAUSDT",
       "description": "Symbol"
     },
     "timeframe": {
-      "value": "30m",
+      "value": "1m",
       "description": "Timeframe"
     },
     "ema_fast": {
-      "value": 23,
+      "value": 39,
       "description": "Fast EMA",
       "step": 1
     },
     "ema_slow": {
-      "value": 85,
+      "value": 50,
       "description": "Slow EMA",
       "step": 10
     }

@@ -70,27 +70,6 @@ def list_strategies():
 
 
 
-# @app.post("/run-strategy")
-# async def run_strategy(request: Request):
-   #  body = await request.json()
-   #  path = Path("strategies") / body["path"]
-   #  if not path.exists():
-   #      return {"error": "strategy not found"}
-
-   #  result = subprocess.run(
-   #      ["python", str(path)],
-   #      capture_output=True,
-   #      text=True
-   #  )
-
-   #  if result.returncode != 0:
-   #      return {
-   #          "status": "error",
-   #          "stderr": result.stderr
-   #      }
-
-   #  return {"status": "ok"}
-
 
 @app.post("/run-strategy")
 async def run_strategy(request: Request):
