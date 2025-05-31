@@ -10,11 +10,11 @@
       "description": "Symbol"
     },
     "timeframe": {
-      "value": "1m",
+      "value": "8h",
       "description": "Timeframe"
     },
     "ema_fast": {
-      "value": 39,
+      "value": 390,
       "description": "Fast EMA",
       "step": 1
     },
@@ -31,15 +31,15 @@
       "description": "Str. name"
     },
     "symbol": {
-      "value": "CETUSUSDT",
+      "value": "BTCUSDT",
       "description": "Symbol"
     },
     "timeframe": {
-      "value": "5m",
+      "value": "3m",
       "description": "Timeframe"
     },
     "ema_fast": {
-      "value": 29,
+      "value": 32,
       "description": "Fast EMA",
       "step": 1
     },
@@ -56,15 +56,15 @@
       "description": "Str. name"
     },
     "symbol": {
-      "value": "CETUSUSDT",
+      "value": "BTCUSDT",
       "description": "Symbol"
     },
     "timeframe": {
-      "value": "5m",
+      "value": "1m",
       "description": "Timeframe"
     },
     "ema_fast": {
-      "value": 35,
+      "value": 36,
       "description": "Fast EMA",
       "step": 1
     },
@@ -81,11 +81,11 @@
       "description": "Str. name"
     },
     "symbol": {
-      "value": "DUSKUSDT",
+      "value": "BTCUSDT",
       "description": "Symbol"
     },
     "timeframe": {
-      "value": "30m",
+      "value": "3d",
       "description": "Timeframe"
     },
     "ema_fast": {
@@ -114,7 +114,7 @@
       "description": "Timeframe"
     },
     "ema_fast": {
-      "value": 25,
+      "value": 26,
       "description": "Fast EMA",
       "step": 1
     },
@@ -131,11 +131,11 @@
       "description": "Str. name"
     },
     "symbol": {
-      "value": "CETUSUSDT",
+      "value": "BTCUSDT",
       "description": "Symbol"
     },
     "timeframe": {
-      "value": "5m",
+      "value": "3m",
       "description": "Timeframe"
     },
     "ema_fast": {
@@ -181,11 +181,11 @@
       "description": "Str. name"
     },
     "symbol": {
-      "value": "BTCUSD",
+      "value": "BTCUSDT",
       "description": "Symbol"
     },
     "timeframe": {
-      "value": "1m\u043e",
+      "value": "1m",
       "description": "Timeframe"
     },
     "ema_fast": {
@@ -199,27 +199,27 @@
       "step": 10
     }
   },
-  "__0__default": {
+  "__0__test_slow--2": {
     "isActive": true,
     "file_name": {
       "value": "EMA_Cross",
       "description": "Str. name"
     },
     "symbol": {
-      "value": "BTCUSDT",
+      "value": "ETHUSDT",
       "description": "Symbol"
     },
     "timeframe": {
-      "value": "1m",
+      "value": "5m",
       "description": "Timeframe"
     },
     "ema_fast": {
-      "value": 390,
+      "value": 441,
       "description": "Fast EMA",
       "step": 1
     },
     "ema_slow": {
-      "value": 50,
+      "value": 170,
       "description": "Slow EMA",
       "step": 10
     }

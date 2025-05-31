@@ -35,11 +35,11 @@
       "description": "Symbol"
     },
     "timeframe": {
-      "value": "1m",
+      "value": "3m",
       "description": "Timeframe"
     },
     "ema_fast": {
-      "value": 39,
+      "value": 40,
       "description": "Fast EMA",
       "step": 1
     },
@@ -149,27 +149,102 @@
       "step": 10
     }
   },
-  "__0__default": {
+  "__0__test_slow--3": {
+    "isActive": false,
+    "file_name": {
+      "value": "EMA_Cross",
+      "description": "Str. name"
+    },
+    "symbol": {
+      "value": "ETHUSDT",
+      "description": "Symbol"
+    },
+    "timeframe": {
+      "value": "5m",
+      "description": "Timeframe"
+    },
+    "ema_fast": {
+      "value": 231,
+      "description": "Fast EMA",
+      "step": 1
+    },
+    "ema_slow": {
+      "value": 75,
+      "description": "Slow EMA",
+      "step": 10
+    }
+  },
+  "__4__test_slow--3": {
+    "isActive": false,
+    "file_name": {
+      "value": "EMA_Cross",
+      "description": "Str. name"
+    },
+    "symbol": {
+      "value": "DUSKUSDT",
+      "description": "Symbol"
+    },
+    "timeframe": {
+      "value": "30m",
+      "description": "Timeframe"
+    },
+    "ema_fast": {
+      "value": 232,
+      "description": "Fast EMA",
+      "step": 1
+    },
+    "ema_slow": {
+      "value": 75,
+      "description": "Slow EMA",
+      "step": 10
+    }
+  },
+  "__5__test_slow--3": {
+    "isActive": false,
+    "file_name": {
+      "value": "EMA_Cross",
+      "description": "Str. name"
+    },
+    "symbol": {
+      "value": "DUSKUSDT",
+      "description": "Symbol"
+    },
+    "timeframe": {
+      "value": "30m",
+      "description": "Timeframe"
+    },
+    "ema_fast": {
+      "value": 232,
+      "description": "Fast EMA",
+      "step": 1
+    },
+    "ema_slow": {
+      "value": 750,
+      "description": "Slow EMA",
+      "step": 10
+    }
+  },
+  "__6__test_slow--3": {
     "isActive": true,
     "file_name": {
       "value": "EMA_Cross",
       "description": "Str. name"
     },
     "symbol": {
-      "value": "BERAUSDT",
+      "value": "DUSKUSDT",
       "description": "Symbol"
     },
     "timeframe": {
-      "value": "1m",
+      "value": "30m",
       "description": "Timeframe"
     },
     "ema_fast": {
-      "value": 39,
+      "value": 23,
       "description": "Fast EMA",
       "step": 1
     },
     "ema_slow": {
-      "value": 50,
+      "value": 750,
       "description": "Slow EMA",
       "step": 10
     }
